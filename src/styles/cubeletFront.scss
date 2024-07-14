@@ -1,0 +1,210 @@
+$x: 80px;
+div.cubelet {
+  div.face {
+    &::after {
+      content: " ";
+      height: calc($x - 1px);
+      width: calc($x - 1px);
+      border: 1px solid black;
+      display: block;
+    }
+    &.front::after {
+      background-color: blue;
+    }
+    &.back::after {
+      background-color: green;
+    }
+    &.left::after {
+      background-color: red;
+    }
+    &.right::after {
+      background-color: orange;
+    }
+    &.top::after {
+      background-color: yellow;
+    }
+    &.bottom::after {
+      background-color: white;
+    }
+  }
+  &#f1 {
+    div.front::after {
+      transform: translate3d(0, 0, 0);
+    }
+    div.back::after {
+      transform: translate3d(0, 0, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, 0, 0);
+    }
+    div.right::after {
+      transform: translate3d(0, 0, -$x * 2);
+    }
+    div.top::after {
+      transform: translate3d(0, $x * 2, 0);
+    }
+    div.bottom::after {
+      transform: translate3d(0, $x * 2, $x * 2);
+    }
+  }
+  &#f2 {
+    div.front::after {
+      transform: translate3d($x, 0, 0);
+    }
+    div.back::after {
+      transform: translate3d($x, 0, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, 0, $x);
+    }
+    div.right::after {
+      transform: translate3d(0, 0, -$x);
+    }
+    div.top::after {
+      transform: translate3d($x, $x * 2, 0);
+    }
+    div.bottom::after {
+      transform: translate3d($x, $x * 2, $x * 2);
+    }
+  }
+  &#f3 {
+    div.front::after {
+      transform: translate3d($x * 2, 0, 0);
+    }
+    div.back::after {
+      transform: translate3d($x * 2, 0, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, 0, $x * 2);
+    }
+    div.right::after {
+      transform: translate3d(0, 0, 0);
+    }
+    div.top::after {
+      transform: translate3d($x * 2, $x * 2, 0);
+    }
+    div.bottom::after {
+      transform: translate3d($x * 2, $x * 2, $x * 2);
+    }
+  }
+  &#f4 {
+    div.front::after {
+      transform: translate3d(0, $x, 0);
+    }
+    div.back::after {
+      transform: translate3d(0, $x, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, $x, 0);
+    }
+    div.right::after {
+      transform: translate3d(0, $x, -$x * 2);
+    }
+    div.top::after {
+      transform: translate3d(0, $x * 2, -$x);
+    }
+    div.bottom::after {
+      transform: translate3d(0, $x * 2, $x);
+    }
+  }
+  &#f5 {
+    div.front::after {
+      transform: translate3d($x, $x, 0);
+    }
+    div.back::after {
+      transform: translate3d($x, $x, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, $x, $x);
+    }
+    div.right::after {
+      transform: translate3d(0, $x, -$x);
+    }
+    div.top::after {
+      transform: translate3d($x, $x * 2, -$x);
+    }
+    div.bottom::after {
+      transform: translate3d($x, $x * 2, $x);
+    }
+  }
+  &#f6 {
+    div.front::after {
+      transform: translate3d($x * 2, $x, 0);
+    }
+    div.back::after {
+      transform: translate3d($x * 2, $x, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, $x, $x * 2);
+    }
+    div.right::after {
+      transform: translate3d(0, $x, 0);
+    }
+    div.top::after {
+      transform: translate3d($x * 2, $x * 2, -$x);
+    }
+    div.bottom::after {
+      transform: translate3d($x * 2, $x * 2, $x);
+    }
+  }
+  &#f7 {
+    div.front::after {
+      transform: translate3d(0, $x * 2, 0);
+    }
+    div.back::after {
+      transform: translate3d(0, $x * 2, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, $x * 2, 0);
+    }
+    div.right::after {
+      transform: translate3d(0, $x * 2, -$x * 2);
+    }
+    div.top::after {
+      transform: translate3d(0, $x * 2, -$x * 2);
+    }
+    div.bottom::after {
+      transform: translate3d(0, $x * 2, 0);
+    }
+  }
+  &#f8 {
+    div.front::after {
+      transform: translate3d($x, $x * 2, 0);
+    }
+    div.back::after {
+      transform: translate3d($x, $x * 2, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, $x * 2, $x);
+    }
+    div.right::after {
+      transform: translate3d(0, $x * 2, -$x);
+    }
+    div.top::after {
+      transform: translate3d($x, $x * 2, -$x * 2);
+    }
+    div.bottom::after {
+      transform: translate3d($x, $x * 2, 0);
+    }
+  }
+  &#f9 {
+    div.front::after {
+      transform: translate3d($x * 2, $x * 2, 0);
+    }
+    div.back::after {
+      transform: translate3d($x * 2, $x * 2, $x * 2);
+    }
+    div.left::after {
+      transform: translate3d(0, $x * 2, $x * 2);
+    }
+    div.right::after {
+      transform: translate3d(0, $x * 2, 0);
+    }
+    div.top::after {
+      transform: translate3d($x * 2, $x * 2, -$x * 2);
+    }
+    div.bottom::after {
+      transform: translate3d($x * 2, $x * 2, 0);
+    }
+  }
+}
