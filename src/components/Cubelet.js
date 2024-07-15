@@ -1,5 +1,7 @@
 import React from "react";
 import "./../styles/cubeletFront.scss";
+import "./../styles/cubeletMid.scss";
+import "./../styles/cubeletBack.scss";
 
 const Cubelet = (props) => {
   return (

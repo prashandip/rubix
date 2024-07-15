@@ -17,32 +17,32 @@ section.cube {
       border: 1px solid black;
       transform-style: preserve-3d;
       &.front {
-        background-color: rgba(0, 0, 255, 0.1);
+        // background-color: rgba(0, 0, 255, 0.1);
         // background-color: blue;
         transform: translateZ($x * 1.5);
       }
       &.back {
-        background-color: rgba(0, 255, 0, 0.1);
+        // background-color: rgba(0, 255, 0, 0.1);
         // background-color: green;
         transform: translateZ(-$x * 1.5);
       }
       &.left {
-        background-color: rgba(255, 0, 0, 0.1);
-        // background-color: red;
+        // background-color: rgba(255, 165, 0, 0.1);
+        // background-color: orange;
         transform: translateX(-$x * 1.5) rotateY(90deg);
       }
       &.right {
-        background-color: rgba(255, 165, 0, 0.1);
-        // background-color: orange;
+        // background-color: rgba(255, 0, 0, 0.1);
+        // background-color: red;
         transform: translateX($x * 1.5) rotateY(90deg);
       }
       &.top {
-        background-color: rgba(255, 255, 0, 0.1);
+        // background-color: rgba(255, 255, 0, 0.1);
         // background-color: yellow;
         transform: translateY(-$x * 1.5) rotateX(90deg);
       }
       &.bottom {
-        background-color: rgba(255, 255, 255, 0.1);
+        // background-color: rgba(255, 255, 255, 0.1);
         // background-color: white;
         transform: translateY($x * 1.5) rotateX(90deg);
       }

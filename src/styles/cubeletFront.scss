@@ -15,10 +15,10 @@ div.cubelet {
       background-color: green;
     }
     &.left::after {
-      background-color: red;
+      background-color: orange;
     }
     &.right::after {
-      background-color: orange;
+      background-color: red;
     }
     &.top::after {
       background-color: yellow;

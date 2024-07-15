@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./../styles/container.scss";
 import Wrapper from "./Wrapper";
 import ArrowIcon from "../icons/ArrowIcon";
@@ -9,6 +9,16 @@ const Container = () => {
   const dispatch = useDispatch();
   const rotateX = useSelector((state) => state.cube.rotateX);
   const rotateY = useSelector((state) => state.cube.rotateY);
+  const [rotationDeg, setRotationDeg] = useState(0);
+  const rotateClockwise = () => {
+    setRotationDeg(rotationDeg + 90);
+    console.log(rotationDeg);
+    for (let i = 1; i <= 9; i++) {
+      document.getElementById(
+        `f${i}`
+      ).style.transform = `rotate(${rotationDeg}deg)`;
+    }
+  };
   return (
     <section className="container">
       <Wrapper />
@@ -38,7 +48,7 @@ const Container = () => {
       </button>
       <div className="controls right">
         <button>U</button>
-        <button>F</button>
+        <button onClick={rotateClockwise}>F</button>
         <button>R</button>
         <button>L</button>
       </div>
