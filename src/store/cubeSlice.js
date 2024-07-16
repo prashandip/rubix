@@ -17,13 +17,20 @@ const initialPositions = [
     ["b7", "b8", "b9"],
   ],
 ];
+const initialTempArray = [
+  ["f1", "f2", "f3"],
+  ["f4", "f5", "f6"],
+  ["f7", "f8", "f9"],
+];
 
 export const cubeSlice = createSlice({
   name: "cube",
   initialState: {
-    rotateX: 0,
-    rotateY: 0,
+    rotateX: -20,
+    rotateY: -20,
+    cubeletRefArray: [],
     positions: initialPositions,
+    tempArray: initialTempArray,
   },
   reducers: {
     setRotateX: (state, action) => {
@@ -35,9 +42,21 @@ export const cubeSlice = createSlice({
     setPositions: (state, action) => {
       state.positions = action.payload;
     },
+    setTempArray: (state, action) => {
+      state.tempArray = action.payload;
+    },
+    setCubeletRefArray: (state, action) => {
+      state.cubeletRefArray = action.payload;
+    },
   },
 });
 
-export const { setRotateX, setRotateY, setPositions } = cubeSlice.actions;
+export const {
+  setRotateX,
+  setRotateY,
+  setPositions,
+  setTempArray,
+  setCubeletRefArray,
+} = cubeSlice.actions;
 
 export default cubeSlice.reducer;
