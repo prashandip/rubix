@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./../styles/cube.scss";
 import Cubelet from "./Cubelet";
 import { useSelector } from "react-redux";
@@ -6,21 +6,13 @@ import { useSelector } from "react-redux";
 const Cube = () => {
   const cubeRotateX = useSelector((state) => state.cube.rotateX);
   const cubeRotateY = useSelector((state) => state.cube.rotateY);
-  const cubelets = useSelector((state) => state.cubelet.cubelets);
-
+  const cubeletRotations = useSelector(
+    (state) => state.cubelet.cubeletRotations
+  );
   const renderCubelets = () => (
     <>
-      {/* {positions.map((face) =>
-        face.map((row) => row.map((value, i) => <Cubelet key={i} id={value} />))
-      )} */}
-      {cubelets.map((cubelet) => (
-        <Cubelet
-          key={cubelet.id}
-          id={cubelet.id}
-          styles={{
-            transform: `rotateX(${cubelet.rotation[0]}deg) rotateY(${cubelet.rotation[0]}deg) rotateZ(${cubelet.rotation[0]}deg)`,
-          }}
-        />
+      {cubeletRotations.map((cubelet) => (
+        <Cubelet key={cubelet.id} id={cubelet.id} rotation={cubelet.rotation} />
       ))}
     </>
   );

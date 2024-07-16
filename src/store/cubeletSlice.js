@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialCubelets = [];
+const initialCubeletPositions = [];
+const initialCubeletRotations = [];
 for (let i = 0, n = "f"; i < 3; i++) {
   if (i === 1) n = "m";
   if (i === 2) n = "b";
   for (let j = 0; j < 9; j++) {
-    initialCubelets.push({
+    initialCubeletPositions.push(`${n}${j + 1}`);
+    initialCubeletRotations.push({
       id: `${n}${j + 1}`,
-      position: [i, j],
       rotation: [0, 0, 0],
     });
   }
@@ -15,15 +16,20 @@ for (let i = 0, n = "f"; i < 3; i++) {
 export const cubeletSlice = createSlice({
   name: "cubelet",
   initialState: {
-    cubelets: initialCubelets,
+    cubeletPositions: initialCubeletPositions,
+    cubeletRotations: initialCubeletRotations,
   },
   reducers: {
-    setCubelets: (state, action) => {
-      state.rotations = action.payload;
+    setCubeletPositions: (state, action) => {
+      state.cubeletPositions = action.payload;
+    },
+    setCubeletRotations: (state, action) => {
+      state.cubeletRotations = action.payload;
     },
   },
 });
 
-export const { setCubelets } = cubeletSlice.actions;
+export const { setCubeletPositions, setCubeletRotations } =
+  cubeletSlice.actions;
 
 export default cubeletSlice.reducer;

@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./../styles/container.scss";
 import Wrapper from "./Wrapper";
 import ArrowIcon from "../icons/ArrowIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { setRotateX, setRotateY } from "../store/cubeSlice";
+import { performRotationF, updatePositionsAfterF } from "../methods/Algorithms";
+import {
+  setCubeletPositions,
+  setCubeletRotations,
+} from "../store/cubeletSlice";
 
 const Container = () => {
   const dispatch = useDispatch();
   const rotateX = useSelector((state) => state.cube.rotateX);
   const rotateY = useSelector((state) => state.cube.rotateY);
-  const positions = useSelector((state) => state.cube.positions);
+  const cubeletPositions = useSelector(
+    (state) => state.cubelet.cubeletPositions
+  );
+  const cubeletRotations = useSelector(
+    (state) => state.cubelet.cubeletRotations
+  );
+  const moveF = () => {
+    dispatch(setCubeletRotations(performRotationF(cubeletRotations)));
+    dispatch(setCubeletPositions(updatePositionsAfterF(cubeletPositions)));
+  };
   return (
     <section className="container">
       <Wrapper />
@@ -39,7 +53,7 @@ const Container = () => {
       </button>
       <div className="controls right">
         <button>U</button>
-        <button>F</button>
+        <button onClick={moveF}>F</button>
         <button>R</button>
         <button>L</button>
       </div>

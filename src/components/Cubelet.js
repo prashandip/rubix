@@ -1,20 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./../styles/cubeletFront.scss";
 import "./../styles/cubeletMid.scss";
 import "./../styles/cubeletBack.scss";
-import { getRotationXyz } from "../methods/Cubelets";
 
 const Cubelet = (props) => {
-  const ref = useRef();
-  useEffect(() => {
-    // console.log(getRotationXyz(ref.current.style.transform));
-  });
+  const rotation = props.rotation;
   return (
     <div
       className="cubelet"
       id={props.id}
-      ref={ref}
-      style={{ transform: "rotateX(0deg) rotateY(0deg) rotateZ(0deg)" }}
+      style={{
+        transform: `rotateX(${rotation[0]}deg) rotateY(${rotation[1]}deg) rotateZ(${rotation[2]}deg)`,
+      }}
     >
       <div className="face front"></div>
       <div className="face back"></div>
